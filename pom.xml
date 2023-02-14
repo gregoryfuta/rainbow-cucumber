@@ -54,9 +54,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-                    <includes>
-                        <include>**/CucumberRunner*.java</include>
-                    </includes>
+<!--                    <includes>-->
+<!--                        <include>**/CucumberRunner*.java</include>-->
+<!--                    </includes>-->
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
                 <dependencies>

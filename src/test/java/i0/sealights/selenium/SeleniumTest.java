@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,7 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-// @Ignore
 public class SeleniumTest {
 
     private static final String CHROME_DRIVER_LOCATION = "c:\\Users\\grzeg\\sellenium-philips-mvn\\drivers\\chromedriver.exe";
@@ -26,7 +24,7 @@ public class SeleniumTest {
         }
     }
 
-    // @Test
+     @Test
     public void shouldRUnTest() {
         // given
         int argument = 2;
@@ -46,7 +44,7 @@ public class SeleniumTest {
         driver.quit();
     }
 
-    // @Test
+     @Test
     public void shouldEvaluateTheExpression() throws InterruptedException {
         // given
         driver.navigate().to("http://localhost:9080/");
@@ -71,7 +69,7 @@ public class SeleniumTest {
         assertEquals("The result is: 21", actualResultText);
     }
 
-    // @Test
+     @Test
     public void shouldSumTheFiniteGeometricSeries() throws InterruptedException {
         // given
         driver.navigate().to("http://localhost:9080/");

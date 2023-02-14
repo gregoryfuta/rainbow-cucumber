@@ -17,21 +17,21 @@ public class MathExpressionEvaluationSteps extends BaseSteps {
         setTestNameAndExecutionInBrowser("shouldEvaluateTheExpressionCCC", "execution-03");
     }
 
-    @When("Input the expression")
-    public void fillTheForm() {
+    @When("^Input the \"([^\"]*)\" expression$")
+    public void fillTheForm(String expression) {
         final WebElement expressionInput = driver.findElement(By.id("expression"));
-        expressionInput.sendKeys("3 * (4 + 3)");
+        expressionInput.sendKeys(expression);
         expressionInput.submit();
 
         waitForWhile(2_000);
     }
 
-    @Then("The result should be 21")
-    public void assertTheResult() {
+    @Then("^The result should be (\\d+)$")
+    public void assertTheResult(int result) {
         final WebElement responseToast = driver.findElement(By.cssSelector("div.Toastify__toast-body div + div"));
         final String actualResultText = responseToast.getText();
 
         // then
-        assertEquals("The result is: 21", actualResultText);
+        assertEquals("The result is: " + result, actualResultText);
     }
 }

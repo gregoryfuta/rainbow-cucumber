@@ -53,9 +53,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-                    <!--                    <includes>-->
-                    <!--                        <include>**/CucumberRunner*.java</include>-->
-                    <!--                    </includes>-->
+                                        <includes>
+                                            <include>**/CucumberRunner*.java</include>
+                                        </includes>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
                 <dependencies>
@@ -106,15 +106,17 @@
                 <version>3.1.862</version>
                 <configuration>
                     <tokenFile>sl-token.txt</tokenFile>
-                    <buildSessionIdFile>./buildSessionId.txt</buildSessionIdFile>
-                    <createBuildSessionId>false</createBuildSessionId>
+<!--                    <buildSessionIdFile>./buildSessionId.txt</buildSessionIdFile>-->
+                    <createBuildSessionId>true</createBuildSessionId>
+                    <createExecutionId>true</createExecutionId>
                     <appName>gfDemoTest02</appName>
-                    <build>Tue, 14 Feb 2023 11:01:42 GMT</build>
+<!--                    <build>Tue, 15 Feb 2023 11:01:42 GMT</build>-->
+                    <runTestOnly>true</runTestOnly>
                     <branch>testing</branch>
                     <packagesincluded>i00.sealights*</packagesincluded>
                     <buildScannerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-build-scanner.jar</buildScannerJar>
                     <testListenerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-test-listener.jar</testListenerJar>
-                    <testStage>Functional Tests</testStage>
+                    <testStage>Cucumber Tests</testStage>
                     <labId>integ_testing_gfDemoTest02</labId>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
@@ -123,7 +125,8 @@
                     <logFolder>.</logFolder>
                     <sealightsJvmParams>
                         <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
-                        <sl.otel.enabled>false</sl.otel.enabled>
+                        <sl.instrumentation.cucumberEnabled>true</sl.instrumentation.cucumberEnabled>
+                        <sl.otel.enabled>true</sl.otel.enabled>
                     </sealightsJvmParams>
                     <includeResources>true</includeResources>
                 </configuration>

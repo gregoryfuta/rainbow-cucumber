@@ -14,17 +14,4 @@ public class BaseSteps {
             throw new RuntimeException(e);
         }
     }
-
-    protected JavascriptExecutor fetchJavascriptExecutor() {
-        return (JavascriptExecutor) driver;
-    }
-
-    protected void setTestNameAndExecutionInBrowser(final String testName, final String executionId) {
-        final JavascriptExecutor javascriptExecutor = fetchJavascriptExecutor();
-        javascriptExecutor.executeScript(
-            "const testStartEvent = new CustomEvent(\"set:baggage\", {detail: { \"x-sl-test-name\": \"" + testName + "\", \"x-sl-test-session-id\":\"" + executionId + "\"},\n"
-                + "    });\n"
-                + "    window.dispatchEvent(testStartEvent);");
-        waitForWhile(2_000);
-    }
 }

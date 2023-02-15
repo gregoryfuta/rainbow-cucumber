@@ -14,7 +14,6 @@ public class MathExpressionEvaluationSteps extends BaseSteps {
     public void enterEvaluationPage() {
         driver.navigate().to("http://localhost:9080/");
         waitForWhile(2_000);
-        setTestNameAndExecutionInBrowser("shouldEvaluateTheExpressionCCC", "execution-03");
     }
 
     @When("^Input the \"([^\"]*)\" expression$")

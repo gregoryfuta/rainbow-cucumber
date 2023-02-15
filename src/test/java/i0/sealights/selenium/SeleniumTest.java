@@ -11,6 +11,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SeleniumTest {
 
@@ -49,10 +50,12 @@ public class SeleniumTest {
         // given
         driver.navigate().to("http://localhost:9080/");
 
+         RemoteWebDriver remoteWebDriver;
+
         Thread.sleep(2000);
 
         // and
-        setTestNameAndExecutionInBrowser("shouldEvaluateTheExpressionCCC", "execution-03");
+        setTestNameAndExecutionInBrowser("shouldEvaluateTheExpressionCCC", "57a4dc17-fd78-4934-87a8-a8e3e0f9e0db");
 
         // whan
         final WebElement expressionInput = driver.findElement(By.id("expression"));
@@ -77,7 +80,7 @@ public class SeleniumTest {
         Thread.sleep(2000);
 
         // and
-        setTestNameAndExecutionInBrowser("shouldSumTheFiniteGeometricSeries", "execution-04");
+        setTestNameAndExecutionInBrowser("shouldSumTheFiniteGeometricSeries", "57a4dc17-fd78-4934-87a8-a8e3e0f9e0db");
 
         // when - set the field values
         final WebElement firstInput = driver.findElement(By.id("first"));
@@ -107,13 +110,15 @@ public class SeleniumTest {
         return (JavascriptExecutor) driver;
     }
 
-    private void setTestNameAndExecutionInBrowser(final String testName, final String executionId) throws InterruptedException {
-        final JavascriptExecutor javascriptExecutor = fetchJavascriptExecutor();
-        javascriptExecutor.executeScript(
-            "const testStartEvent = new CustomEvent(\"set:baggage\", {detail: { \"x-sl-test-name\": \"" + testName + "\", \"x-sl-test-session-id\":\"" + executionId + "\"},\n"
-                + "    });\n"
-                + "    window.dispatchEvent(testStartEvent);");
-        Thread.sleep(2000);
+    private void setTestNameAndExecutionInBrowser(final String testName,
+        final String executionId) throws InterruptedException {
+//
+//        final JavascriptExecutor javascriptExecutor = fetchJavascriptExecutor();
+//        javascriptExecutor.executeScript(
+//            "const testStartEvent = new CustomEvent(\"set:baggage\", {detail: { \"x-sl-test-name\": \"" + testName + "\", \"x-sl-test-session-id\":\"" + executionId + "\"},\n"
+//                + "    });\n"
+//                + "    window.dispatchEvent(testStartEvent);");
+//        Thread.sleep(2000);
     }
 
 }

@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -54,9 +53,9 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M4</version>
                 <configuration>
-<!--                    <includes>-->
-<!--                        <include>**/CucumberRunner*.java</include>-->
-<!--                    </includes>-->
+                    <!--                    <includes>-->
+                    <!--                        <include>**/CucumberRunner*.java</include>-->
+                    <!--                    </includes>-->
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
                 <dependencies>
@@ -98,6 +97,48 @@
                         <!--                        <configuration>-->
                         <!--                            <compilerArgument>-Xlint:-processing</compilerArgument>-->
                         <!--                        </configuration>-->
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.sealights.on-premise.agents.plugin</groupId>
+                <artifactId>sealights-maven-plugin</artifactId>
+                <version>3.1.862</version>
+                <configuration>
+                    <tokenFile>sl-token.txt</tokenFile>
+                    <buildSessionIdFile>./buildSessionId.txt</buildSessionIdFile>
+                    <createBuildSessionId>false</createBuildSessionId>
+                    <appName>gfDemoTest02</appName>
+                    <build>Tue, 14 Feb 2023 11:01:42 GMT</build>
+                    <branch>testing</branch>
+                    <packagesincluded>i00.sealights*</packagesincluded>
+                    <buildScannerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-build-scanner.jar</buildScannerJar>
+                    <testListenerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-test-listener.jar</testListenerJar>
+                    <testStage>Functional Tests</testStage>
+                    <labId>integ_testing_gfDemoTest02</labId>
+                    <runFunctionalTests>true</runFunctionalTests>
+                    <logEnabled>true</logEnabled>
+                    <logLevel>DEBUG</logLevel>
+                    <logToConsole>true</logToConsole>
+                    <logFolder>.</logFolder>
+                    <sealightsJvmParams>
+                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
+                        <sl.otel.enabled>false</sl.otel.enabled>
+                    </sealightsJvmParams>
+                    <includeResources>true</includeResources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>a2</id>
+                        <goals>
+                            <goal>test-listener</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>a3</id>
+                        <goals>
+                            <goal>prepare-test-listener</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

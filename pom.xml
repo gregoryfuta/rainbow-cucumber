@@ -112,8 +112,8 @@
                     <packagesincluded>i00.sealights*</packagesincluded>
                     <buildScannerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-build-scanner.jar</buildScannerJar>
                     <testListenerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-test-listener.jar</testListenerJar>
-                    <testStage>Cucumbar Marc</testStage>
-                    <labId>integ_testing_gfDemoTest02</labId>
+                    <testStage>Cucumber Marc</testStage>
+                    <labId>integ_testing_gfColoredBrowser</labId>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>

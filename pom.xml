@@ -106,10 +106,8 @@
                 <version>3.1.862</version>
                 <configuration>
                     <tokenFile>sl-token.txt</tokenFile>
-<!--                    <createBuildSessionId>true</createBuildSessionId>-->
-                    <createExecutionId>true</createExecutionId>
+                    <createBuildSessionId>false</createBuildSessionId>
                     <appName>gfDemoTest02</appName>
-<!--                    <build>ZXC</build>-->
                     <branch>testing</branch>
                     <packagesincluded>i00.sealights*</packagesincluded>
                     <buildScannerJar>C:\Users\grzeg\sellenium-philips-mvn\sl-build-scanner.jar</buildScannerJar>

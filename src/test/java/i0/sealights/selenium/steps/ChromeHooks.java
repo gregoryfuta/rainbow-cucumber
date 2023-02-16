@@ -20,6 +20,8 @@ public class ChromeHooks {
         ChromeOptions options = new ChromeOptions();
         BaseSteps.driver = new ChromeDriver(options);
         BaseSteps.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+        BaseSteps.driver.navigate().to("http://localhost:9080/");
     }
 
     @After

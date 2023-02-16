@@ -12,8 +12,7 @@ public class MathExpressionEvaluationSteps extends BaseSteps {
 
     @Given("Enter expression evaluator page")
     public void enterEvaluationPage() {
-        driver.navigate().to("http://localhost:9080/");
-        waitForWhile(2_000);
+        waitForWhile(1_000);
     }
 
     @When("^Input the \"([^\"]*)\" expression$")

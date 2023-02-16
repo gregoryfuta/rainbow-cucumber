@@ -12,8 +12,7 @@ public class FiniteSumSteps extends BaseSteps {
 
     @Given("^Enter sum expression evaluator page$")
     public void enterSumExpressionEvaluatorPage() {
-        driver.navigate().to("http://localhost:9080/");
-        waitForWhile(2_000);
+        waitForWhile(1_000);
     }
 
     @When("^Input the values of first \"([^\"]*)\", ratio \"([^\"]*)\" and count \"([^\"]*)\"$")

@@ -1,0 +1,24 @@
+{
+  "tokenFile": "./sl.pom.config.json",
+  "createBuildSessionId": true,
+  "buildSessionId": "${sLBuildSessionID}",
+  "appName" : "VeeveMethodTest",
+  "branchName": "testing",
+  "buildName": "build-001",
+  "packagesIncluded": "i0.sealights.*",
+  "filesIncluded": "*.class",
+  "filesStorage":"/tmp",
+  "logEnabled": false,
+  "logLevel":"info",
+  "logToFile": false,
+  "logToConsole": false,
+  "executionType":"full",
+  "proxy": null,
+  "labId": null,
+  "sealightsJvmParams": {
+    "sl.featuresData.reportOnConstructors": false,
+    "sl.featuresData.enableLineCoverage": false,
+    "sl.customFilterFile:": "veeve/customFilter.json"
+  },
+  "testTasksAndStages":{"test": "Unit Tests", "integrationTest":"Integration Tests"}
+}

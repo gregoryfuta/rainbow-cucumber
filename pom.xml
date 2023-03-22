@@ -45,7 +45,7 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-<!--                        <include>**/CucumberRunner*.java</include>-->
+                        <!--                        <include>**/CucumberRunner*.java</include>-->
                         <include>**/BackendOnly*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
@@ -89,6 +89,56 @@
                         <!--                        <configuration>-->
                         <!--                            <compilerArgument>-Xlint:-processing</compilerArgument>-->
                         <!--                        </configuration>-->
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.sealights.on-premise.agents.plugin</groupId>
+                <artifactId>sealights-maven-plugin</artifactId>
+                <configuration>
+                    <tokenFile>./sl.token.txt</tokenFile>
+<!--                    <buildSessionId>${sLBuildSessionID}</buildSessionId>-->
+                    <createBuildSessionId>true</createBuildSessionId>
+                    <appName>nioApp</appName>
+                    <build>build-001</build>
+                    <branch>testing</branch>
+                    <packagesincluded>i0.sealights.*</packagesincluded>
+                    <testStage>CtxPropgationFail</testStage>
+                    <labId>integ_testing_nio_test</labId>
+                    <runFunctionalTests>true</runFunctionalTests>
+                    <logEnabled>true</logEnabled>
+                    <logLevel>DEBUG</logLevel>
+                    <logToConsole>true</logToConsole>
+                    <filesincluded>*.class</filesincluded>
+<!--                    <filesStorage>/tmp</filesStorage>-->
+                    <logLevel>INFO</logLevel>
+                    <sealightsJvmParams>
+<!--                        <sl.customFilterFile>C:\projekty\sealigths\sellenium-philips-mvn\veeve\customFilter.json</sl.customFilterFile>-->
+                        <sl.featuresData.enableLineCoverage>false</sl.featuresData.enableLineCoverage>
+                        <sl.featuresData.reportOnConstructors>false</sl.featuresData.reportOnConstructors>
+                        <sl.featuresData.codeCoverageManagerVersion>v2</sl.featuresData.codeCoverageManagerVersion>
+                        <sl.otel.enabled>true</sl.otel.enabled>
+                    </sealightsJvmParams>
+                    <includeResources>true</includeResources>
+                </configuration>
+                <executions>
+<!--                    <execution>-->
+<!--                        <id>a1</id>-->
+<!--                        <goals>-->
+<!--                            <goal>build-scanner</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+                    <execution>
+                        <id>a2</id>
+                        <goals>
+                            <goal>test-listener</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>a3</id>
+                        <goals>
+                            <goal>prepare-test-listener</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

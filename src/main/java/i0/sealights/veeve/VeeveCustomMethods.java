@@ -1,5 +1,8 @@
 package i0.sealights.veeve;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class VeeveCustomMethods {
 
     public int methodIncludeInt(int a) {
@@ -24,5 +27,9 @@ public class VeeveCustomMethods {
 
     public int methodExcludeDouble(double a) {
         return 1;
+    }
+
+    private List<String> convertResultSetToData2(List<String> a, List<String> b) {
+        return new ArrayList<String >();
     }
 }

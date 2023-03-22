@@ -18,7 +18,7 @@
   "sealightsJvmParams": {
     "sl.featuresData.reportOnConstructors": false,
     "sl.featuresData.enableLineCoverage": false,
-    "sl.customFilterFile:": "veeve/customFilter.json"
+    "sl.customFilterFile": "veeve/customFilter.json"
   },
   "testTasksAndStages":{"test": "Unit Tests", "integrationTest":"Integration Tests"}
 }

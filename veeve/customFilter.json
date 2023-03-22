@@ -1,0 +1,10 @@
+{
+  "rules": [
+    {
+      "classNames": [".*VeeveCustomMethods.*"],
+      "excludesExact": [
+        "private List convertResultSetToData2(List, List)"
+      ]
+    }
+  ]
+}

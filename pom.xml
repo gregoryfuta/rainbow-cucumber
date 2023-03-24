@@ -67,8 +67,8 @@
                 <version>3.0.0-M4</version>
                 <configuration>
                     <includes>
-<!--                        <include>**/CucumberRunner*.java</include>-->
-                        <include>**/BackendOnly*.java</include>
+                        <include>**/CucumberRunner*.java</include>
+<!--                        <include>**/BackendOnly*.java</include>-->
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
@@ -119,17 +119,17 @@
                 <artifactId>sealights-maven-plugin</artifactId>
                 <version>3.1.862</version>
                 <configuration>
-                    <tokenFile>sl-token.txt</tokenFile>
-                    <createBuildSessionId>true</createBuildSessionId>
+                    <tokenFile>sl.ftv2-token.txt</tokenFile>
+                    <createBuildSessionId>false</createBuildSessionId>
                     <createExecutionId>true</createExecutionId>
 <!--                    <appName>cucumberDemo4</appName>-->
 <!--                    <branch>testing</branch>-->
 <!--                    <build>test-001</build>-->
 <!--                    <packagesincluded>i00.sealights.*</packagesincluded>-->
-                    <buildScannerJar>c:\projekty\agents\java-build-agent-4.0.2228.jar</buildScannerJar>
-                    <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.2228.jar</testListenerJar>
+                    <buildScannerJar>c:\projekty\agents\java-build-agent-4.0.0-SNAPSHOT.jar</buildScannerJar>
+                    <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.0-SNAPSHOT.jar</testListenerJar>
                     <testStage>CtxPropgation</testStage>
-                    <labId>integ_testing_otel_instr</labId>
+                    <labId>integ_testing_cucumberDemo4</labId>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>

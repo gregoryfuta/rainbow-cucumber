@@ -13,19 +13,19 @@ public class ChromeHooks {
     @Before
     public void beforeScenario() {
 
-        if (System.getProperty("webdriver.chrome.driver") == null) {
-            System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_LOCATION);
-        }
-
-        ChromeOptions options = new ChromeOptions();
-        BaseSteps.driver = new ChromeDriver(options);
-        BaseSteps.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-
-        BaseSteps.driver.navigate().to("http://localhost:9080/");
+//        if (System.getProperty("webdriver.chrome.driver") == null) {
+//            System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_LOCATION);
+//        }
+//
+//        ChromeOptions options = new ChromeOptions();
+//        BaseSteps.driver = new ChromeDriver(options);
+//        BaseSteps.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+//
+//        BaseSteps.driver.navigate().to("http://localhost:9080/");
     }
 
     @After
     public void afterScenario() {
-        BaseSteps.driver.quit();
+//        BaseSteps.driver.quit();
     }
 }

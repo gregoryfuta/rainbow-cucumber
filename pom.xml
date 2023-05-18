@@ -117,27 +117,28 @@
             <plugin>
                 <groupId>io.sealights.on-premise.agents.plugin</groupId>
                 <artifactId>sealights-maven-plugin</artifactId>
-                <version>3.1.862</version>
+                <version>4.0.991</version>
                 <configuration>
-                    <tokenFile>sl.ftv2-token.txt</tokenFile>
-                    <createBuildSessionId>false</createBuildSessionId>
+                    <tokenFile>sl-token.txt</tokenFile>
+                    <createBuildSessionId>true</createBuildSessionId>
                     <createExecutionId>true</createExecutionId>
-<!--                    <appName>cucumberDemo4</appName>-->
-<!--                    <branch>testing</branch>-->
-<!--                    <build>test-001</build>-->
-<!--                    <packagesincluded>i00.sealights.*</packagesincluded>-->
-                    <buildScannerJar>c:\projekty\agents\java-build-agent-4.0.0-SNAPSHOT.jar</buildScannerJar>
-                    <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.0-SNAPSHOT.jar</testListenerJar>
+                    <appName>selenium</appName>
+                    <branch>develop</branch>
+                    <build>test-002</build>
+                    <packagesincluded>i0.sealights.*</packagesincluded>
+                    <buildScannerJar>c:\projekty\agents\sl-build-scanner-4.0.2275.jar</buildScannerJar>
+                    <testListenerJar>c:\projekty\agents\sl-test-listener-4.0.2275.jar</testListenerJar>
                     <testStage>CtxPropgation</testStage>
-                    <labId>integ_testing_cucumberDemo4</labId>
+                    <labId>integ_develop_selenium</labId>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>
                     <logToConsole>true</logToConsole>
                     <sealightsJvmParams>
-                        <sl.featuresData.codeCoverageManagerVersion>v2</sl.featuresData.codeCoverageManagerVersion>
-<!--                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>-->
+                        <sl.featuresData.codeCoverageManagerVersion>v3</sl.featuresData.codeCoverageManagerVersion>
+                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
                         <sl.otelConfiguration.loadEmbeddedAgent>true</sl.otelConfiguration.loadEmbeddedAgent>
+                        <sl.featuresData.removeCucumberLineNumber>true</sl.featuresData.removeCucumberLineNumber>
                         <sl.otel.enabled>true</sl.otel.enabled>
                     </sealightsJvmParams>
                     <includeResources>true</includeResources>

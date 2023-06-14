@@ -127,10 +127,12 @@
 <!--                    <branch>testing</branch>-->
 <!--                    <build>test-001</build>-->
 <!--                    <packagesincluded>i00.sealights.*</packagesincluded>-->
+<!--                    CONFIGURABLE START-->
                     <buildScannerJar>c:\projekty\agents\java-build-agent-4.0.0-SNAPSHOT.jar</buildScannerJar>
                     <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.2294.jar</testListenerJar>
-                    <testStage>CtxPropgation</testStage>
                     <labId>integ_develop_3cc4_gfstruts</labId>
+<!--                    CONFIGURABLE END-->
+                    <testStage>CtxPropgation</testStage>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>

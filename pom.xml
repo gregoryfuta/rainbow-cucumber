@@ -122,21 +122,22 @@
                     <tokenFile>sl.ftv2-token.txt</tokenFile>
                     <createBuildSessionId>false</createBuildSessionId>
                     <createExecutionId>true</createExecutionId>
+                    <runTestOnly>true</runTestOnly>
 <!--                    <appName>cucumberDemo4</appName>-->
 <!--                    <branch>testing</branch>-->
 <!--                    <build>test-001</build>-->
 <!--                    <packagesincluded>i00.sealights.*</packagesincluded>-->
                     <buildScannerJar>c:\projekty\agents\java-build-agent-4.0.0-SNAPSHOT.jar</buildScannerJar>
-                    <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.0-SNAPSHOT.jar</testListenerJar>
+                    <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.2294.jar</testListenerJar>
                     <testStage>CtxPropgation</testStage>
-                    <labId>integ_testing_cucumberDemo4</labId>
+                    <labId>integ_develop_3cc4_gfstruts</labId>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>
                     <logToConsole>true</logToConsole>
                     <sealightsJvmParams>
-                        <sl.featuresData.codeCoverageManagerVersion>v2</sl.featuresData.codeCoverageManagerVersion>
-<!--                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>-->
+                        <sl.featuresData.codeCoverageManagerVersion>v3</sl.featuresData.codeCoverageManagerVersion>
+                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
                         <sl.otelConfiguration.loadEmbeddedAgent>true</sl.otelConfiguration.loadEmbeddedAgent>
                         <sl.otel.enabled>true</sl.otel.enabled>
                     </sealightsJvmParams>

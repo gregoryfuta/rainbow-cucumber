@@ -15,7 +15,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class SeleniumTest {
 
-    private static final String CHROME_DRIVER_LOCATION = "c:\\Users\\grzeg\\sellenium-philips-mvn\\drivers\\chromedriver.exe";
+    private static final String CHROME_DRIVER_LOCATION = "C:\\projekty\\sealigths\\sellenium-philips-mvn\\drivers\\114\\chromedriver.exe";
 
     private static ChromeDriver driver;
 
@@ -23,14 +23,6 @@ public class SeleniumTest {
         if (System.getProperty("webdriver.chrome.driver") == null) {
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_LOCATION);
         }
-    }
-
-     @Test
-    public void shouldRUnTest() {
-        // given
-        int argument = 2;
-        // then
-        assertEquals(4, argument + argument);
     }
 
     @BeforeClass
@@ -46,63 +38,73 @@ public class SeleniumTest {
     }
 
      @Test
-    public void shouldEvaluateTheExpression() throws InterruptedException {
+    public void shouldMultiply() throws InterruptedException {
         // given
-        driver.navigate().to("http://localhost:9080/");
+        driver.navigate().to("http://localhost:8080/struts2demo/multiply.action");
 
-         RemoteWebDriver remoteWebDriver;
 
+         driver.navigate().to("http://localhost:8080/struts2demo/multiply.action");
         Thread.sleep(2000);
 
         // and
         setTestNameAndExecutionInBrowser("shouldEvaluateTheExpressionCCC", "57a4dc17-fd78-4934-87a8-a8e3e0f9e0db");
 
-        // whan
-        final WebElement expressionInput = driver.findElement(By.id("expression"));
-        expressionInput.sendKeys("3 * (4 + 3)");
-        expressionInput.submit();
+         // when - set the field values
+         final WebElement firstInput = driver.findElement(By.id("mul_submit_val1"));
+         final WebElement secondInput = driver.findElement(By.id("mul_submit_val2"));
+         final WebElement submitButton = driver.findElement(By.id("mul_submit_btn"));
 
-        Thread.sleep(2000);
+         firstInput.sendKeys("3");
+         secondInput.sendKeys("7");
+
+         Thread.sleep(1000) ;
+         submitButton.click();
+         
 
         // and
-        final WebElement responseToast = driver.findElement(By.cssSelector("div.Toastify__toast-body div + div"));
-        final String actualResultText = responseToast.getText();
+        final WebElement responseElement = driver.findElement(By.id("multiplyResult"));
+        final String actualResultText = responseElement.getText();
 
+         Thread.sleep(1000);
         // then
-        assertEquals("The result is: 21", actualResultText);
+        assertEquals("21", actualResultText);
     }
 
-     @Test
-    public void shouldSumTheFiniteGeometricSeries() throws InterruptedException {
+    @Test
+    public void shouldSumTwoValues() throws InterruptedException {
         // given
-        driver.navigate().to("http://localhost:9080/");
+        driver.navigate().to("http://localhost:8080/struts2demo/add.action");
 
         Thread.sleep(2000);
 
         // and
-        setTestNameAndExecutionInBrowser("shouldSumTheFiniteGeometricSeries", "57a4dc17-fd78-4934-87a8-a8e3e0f9e0db");
+        setTestNameAndExecutionInBrowser("shouldSumTwoValues", "57a4dc17-fd78-4934-87a8-a8e3e0f9e0db");
 
         // when - set the field values
-        final WebElement firstInput = driver.findElement(By.id("first"));
-        final WebElement ratioInput = driver.findElement(By.id("ratio"));
-        final WebElement countInput = driver.findElement(By.id("count"));
-        final WebElement evaluateComplexButton = driver.findElement(By.id("evaluateComplex"));
+        final WebElement firstInput = driver.findElement(By.id("add_submit_val1"));
+        final WebElement secondInput = driver.findElement(By.id("add_submit_val2"));
+        final WebElement submitButton = driver.findElement(By.id("add_submit_btn"));
 
         firstInput.sendKeys("12");
-        ratioInput.sendKeys("0.5");
-        countInput.sendKeys("3");
+        secondInput.sendKeys("13");
 
         // and submit the form
-        evaluateComplexButton.submit();
+        submitButton.submit();
 
         Thread.sleep(2000);  // Let the user actually see something!
 
-        final WebElement responseToast = driver.findElement(By.cssSelector("div.Toastify__toast-body div + div"));
+        final WebElement firstOutput = driver.findElement(By.id("val01"));
+        final WebElement secondOutput = driver.findElement(By.id("val02"));
+        final WebElement resultOutput = driver.findElement(By.id("addResult"));
 
-        String actualResultText = responseToast.getText();
+        String firstOutputText = firstOutput.getText();
+        String secondOutputText = secondOutput.getText();
+        String resultOutputText = resultOutput.getText();
 
         // then
-        assertEquals("The result of the summation is: 21", actualResultText);
+        assertEquals("First value: 12", firstOutputText);
+        assertEquals("Second value: 13", secondOutputText);
+        assertEquals("Result: 25", resultOutputText);
 
     }
 

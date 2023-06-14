@@ -128,6 +128,7 @@
                     <packagesincluded>i0.sealights.*</packagesincluded>
                     <buildScannerJar>c:\projekty\agents\sl-build-scanner-4.0.2275.jar</buildScannerJar>
                     <testListenerJar>c:\projekty\agents\sl-test-listener-4.0.2275.jar</testListenerJar>
+                    <runTestOnly>true</runTestOnly>
                     <testStage>CtxPropgation</testStage>
                     <labId>integ_develop_selenium</labId>
                     <runFunctionalTests>true</runFunctionalTests>

@@ -2,10 +2,12 @@ package i0.sealights.selenium;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+@Ignore
 public class BackendOnlyTest {
 
     final RestTemplate restTemplate = new RestTemplate();

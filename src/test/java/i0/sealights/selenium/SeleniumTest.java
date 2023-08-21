@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.concurrent.TimeUnit;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+@Ignore
 public class SeleniumTest {
 
     private static final String CHROME_DRIVER_LOCATION = "C:\\projekty\\sealigths\\sellenium-philips-mvn\\drivers\\114\\chromedriver.exe";

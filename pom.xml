@@ -132,7 +132,7 @@
                     <testListenerJar>c:\projekty\agents\java-agent-bootstrapper-4.0.2294.jar</testListenerJar>
                     <labId>integ_develop_3cc4_gfstruts</labId>
 <!--                    CONFIGURABLE END-->
-                    <testStage>CtxPropgation</testStage>
+                    <testStage>Selenium Propagation</testStage>
                     <runFunctionalTests>true</runFunctionalTests>
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>

@@ -228,7 +228,7 @@
 <logLevel>DEBUG</logLevel>
 <logToConsole>true</logToConsole>
 <sealightsJvmParams>
-<sl.featuresData.codeCoverageManagerVersion>v2</sl.featuresData.codeCoverageManagerVersion>
+<sl.featuresData.codeCoverageManagerVersion>v3</sl.featuresData.codeCoverageManagerVersion>
 <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
 <sl.otel.enabled>true</sl.otel.enabled>
 </sealightsJvmParams>

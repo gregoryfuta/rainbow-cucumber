@@ -25,13 +25,13 @@ public class SeleniumTest {
         }
     }
 
-     @Test
+    @Test
     public void shouldRUnTest() {
         // given
         int argument = 2;
         // then
 //        assertEquals(4, argument + argument);
-         assertEquals("7", "7");
+        assertEquals("7", "7");
     }
 
     @BeforeClass
@@ -46,12 +46,12 @@ public class SeleniumTest {
         driver.quit();
     }
 
-     @Test
+    @Test
     public void shouldEvaluateTheExpression() throws InterruptedException {
         // given
         driver.navigate().to("http://localhost:9080/");
 
-         RemoteWebDriver remoteWebDriver;
+        RemoteWebDriver remoteWebDriver;
 
         Thread.sleep(2000);
 
@@ -71,10 +71,10 @@ public class SeleniumTest {
 
         // then
 //        assertEquals("The result is: 21", actualResultText);
-         assertEquals("7", "7");
+        assertEquals("7", "7");
     }
 
-     @Test
+    @Test
     public void shouldSumTheFiniteGeometricSeries() throws InterruptedException {
         // given
         driver.navigate().to("http://localhost:9080/");
@@ -104,7 +104,7 @@ public class SeleniumTest {
         String actualResultText = responseToast.getText();
 
         // then
-         assertEquals("7", "7");
+        assertEquals("7", "7");
 //        assertEquals("The result of the summation is: 21", actualResultText);
 
     }

@@ -13,6 +13,14 @@
         <aspectj.version>1.8.4</aspectj.version>
         <allure.version>1.5.4</allure.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--        <cc.version>2.4.0</cc.version>-->
+<!--        <cc.version>3.0.1</cc.version>-->
+<!--        <cc.version>4.0.1</cc.version>-->
+        <cc.version>4.5.2</cc.version>
+<!--        <cc.version>4.8.1</cc.version>-->
+<!--        <cc.version>5.1.3</cc.version>-->
+<!--        <cc.version>5.6.0</cc.version>-->
+<!--        <cc.version>7.9.0</cc.version>-->
     </properties>
 
     <dependencies>
@@ -24,20 +32,29 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>info.cukes</groupId>
+            <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
+            <!--            <version>1.2.5</version>-->
+            <version>${cc.version}</version>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>info.cukes</groupId>-->
+        <!--            <artifactId>cucumber-jvm-deps</artifactId>-->
+        <!--            <version>1.0.5</version>-->
+        <!--            <scope>provided</scope>-->
+        <!--        </dependency>-->
         <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-jvm-deps</artifactId>
-            <version>1.0.5</version>
-            <scope>provided</scope>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cc.version}</version>
+            <scope>test</scope>
         </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -45,12 +62,6 @@
             <version>3.12.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-junit</artifactId>
-            <version>1.2.5</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -68,9 +79,10 @@
                 <configuration>
                     <includes>
                         <include>**/CucumberRunner*.java</include>
-<!--                        <include>**/BackendOnly*.java</include>-->
+                        <include>**/SimpleUnitTest.java</include>
                     </includes>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <!--                    <testFailureIgnore>true</testFailureIgnore>-->
+                    <!--                    <argLine>-agentlib:jdwp=transport=dt_socket,server=n,address=localhost:5005,suspend=y @{sealightsArgLine} ${argLine}</argLine>-->
                 </configuration>
                 <dependencies>
                     <!--                    <dependency>-->
@@ -117,34 +129,43 @@
             <plugin>
                 <groupId>io.sealights.on-premise.agents.plugin</groupId>
                 <artifactId>sealights-maven-plugin</artifactId>
-                <version>4.0.991</version>
+                <version>4.0.1043</version>
                 <configuration>
                     <tokenFile>sl-token.txt</tokenFile>
                     <createBuildSessionId>true</createBuildSessionId>
-                    <createExecutionId>true</createExecutionId>
-                    <appName>selenium</appName>
+                    <!--                    <createExecutionId>true</createExecutionId>-->
+                    <appName>cucumber2</appName>
                     <branch>develop</branch>
-                    <build>test-002</build>
+                    <build>test-007-${cc.version}-cucumberEnabledFalse</build>
                     <packagesincluded>i0.sealights.*</packagesincluded>
-                    <buildScannerJar>c:\projekty\agents\sl-build-scanner-4.0.2275.jar</buildScannerJar>
-                    <testListenerJar>c:\projekty\agents\sl-test-listener-4.0.2275.jar</testListenerJar>
-                    <runTestOnly>true</runTestOnly>
-                    <testStage>CtxPropgation</testStage>
+                    <buildScannerJar>sl-build-scanner.jar</buildScannerJar>
+                    <testListenerJar>sl-test-listener.jar</testListenerJar>
+                    <!--                    <runTestOnly>true</runTestOnly>-->
+                    <testStage>UnitTest</testStage>
                     <labId>integ_develop_selenium</labId>
-                    <runFunctionalTests>true</runFunctionalTests>
+                    <!--                    <runFunctionalTests>true</runFunctionalTests>-->
                     <logEnabled>true</logEnabled>
                     <logLevel>DEBUG</logLevel>
                     <logToConsole>true</logToConsole>
                     <sealightsJvmParams>
+                        <sl.httpRequestsLogLocation>_payload</sl.httpRequestsLogLocation>
                         <sl.featuresData.codeCoverageManagerVersion>v3</sl.featuresData.codeCoverageManagerVersion>
-                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>
+                        <!--                        <sl.featuresData.enableSeleniumColoring>true</sl.featuresData.enableSeleniumColoring>-->
                         <sl.otelConfiguration.loadEmbeddedAgent>true</sl.otelConfiguration.loadEmbeddedAgent>
                         <sl.featuresData.removeCucumberLineNumber>true</sl.featuresData.removeCucumberLineNumber>
                         <sl.otel.enabled>true</sl.otel.enabled>
+                        <sl.instrumentation.cucumberEnabled>false</sl.instrumentation.cucumberEnabled>
+<!--                                                <sl.runCucumber>true</sl.runCucumber>-->
                     </sealightsJvmParams>
                     <includeResources>true</includeResources>
                 </configuration>
                 <executions>
+                    <execution>
+                        <id>a1</id>
+                        <goals>
+                            <goal>build-scanner</goal>
+                        </goals>
+                    </execution>
                     <execution>
                         <id>a2</id>
                         <goals>

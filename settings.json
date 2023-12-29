@@ -15,7 +15,7 @@
   "listenerJar": "C:\\Users\\grzeg\\sellenium-philips-mvn\\sl-test-listener.jar",
   "sealightsJvmParams": {
     "sl.featuresData.enableSeleniumColoring": true,
-    "sl.featuresData.codeCoverageManagerVersion": "v2",
+    "sl.featuresData.codeCoverageManagerVersion": "v3",
     "sl.otel.enabled" : true
   }
 }

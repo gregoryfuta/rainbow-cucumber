@@ -2,12 +2,10 @@ package i0.sealights.selenium.steps;
 
 import static org.junit.Assert.assertEquals;
 
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import i0.sealights.cucumber.FiniteSumService;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 public class FiniteSumSteps extends BaseSteps {
 

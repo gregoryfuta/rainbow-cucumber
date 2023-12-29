@@ -15,8 +15,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 <!--        <cc.version>2.4.0</cc.version>-->
 <!--        <cc.version>3.0.1</cc.version>-->
-<!--        <cc.version>4.0.1</cc.version>-->
-        <cc.version>4.5.2</cc.version>
+        <cc.version>4.0.1</cc.version>
+<!--        <cc.version>4.5.2</cc.version>-->
 <!--        <cc.version>4.8.1</cc.version>-->
 <!--        <cc.version>5.1.3</cc.version>-->
 <!--        <cc.version>5.6.0</cc.version>-->
@@ -136,7 +136,7 @@
                     <!--                    <createExecutionId>true</createExecutionId>-->
                     <appName>cucumber2</appName>
                     <branch>develop</branch>
-                    <build>test-007-${cc.version}-cucumberEnabledFalse</build>
+                    <build>test-009-${cc.version}-cucumberEnabledFalse</build>
                     <packagesincluded>i0.sealights.*</packagesincluded>
                     <buildScannerJar>sl-build-scanner.jar</buildScannerJar>
                     <testListenerJar>sl-test-listener.jar</testListenerJar>
